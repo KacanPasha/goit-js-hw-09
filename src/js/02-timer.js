@@ -56,6 +56,9 @@ function startCountdown() {
   countdownInterval = setInterval(() => {
     const currentTime = new Date().getTime();
     const timeRemaining = targetDate - currentTime;
+    startBtn.setAttribute("disabled", "true")
+    dateInput.disabled = true;
+    dateInput.style.pointerEvents = 'none';
 
     if (timeRemaining <= 0) {
       clearInterval(countdownInterval);
